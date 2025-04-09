@@ -2,19 +2,6 @@
 
 This repository contains a project for classifying messages as **spam** or **ham** (i.e., legitimate). The project is implemented in a Jupyter Notebook, `spam_or_ham.ipynb`, and uses a dataset (`spam1.csv`) that contains labeled messages. The goal is to preprocess the data, build a machine learning model, and evaluate its performance in detecting spam messages.
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Dataset](#dataset)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-
 ## Project Overview
 
 The **Spam or Ham Classification** project aims to classify messages as either spam or ham using machine learning. The project involves the following steps:
