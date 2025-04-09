@@ -1,49 +1,48 @@
 # Spam or Ham Classification
 
-This repository contains a project for classifying messages as **spam** or **ham** (i.e., legitimate). The project is implemented in a Jupyter Notebook, `spam_or_ham.ipynb`, and uses a dataset (`spam1.csv`) that contains labeled messages. The goal is to preprocess the data, build a machine learning model, and evaluate its performance in detecting spam messages.
+This project that implements an algorithm to classify SMS (or email) messages as **Spam** or **Ham (Legitimate)**. The analysis leverages Natural Language Processing (NLP) techniques to preprocess the data and builds three different machine learning models:
+- **Naive Bayes**
+- **Support Vector Machines (SVM)**
+- **K-Nearest Neighbors (KNN)**
+
+Throughout the notebook, there are detailed steps starting from data loading and exploration, through feature engineering, to model building and evaluation.
 
 ## Project Overview
 
-The **Spam or Ham Classification** project aims to classify messages as either spam or ham using machine learning. The project involves the following steps:
+The Jupyter Notebook (`spam_or_ham.ipynb`) walks you through:
 
-- **Data Loading & Preprocessing:** Clean and prepare the dataset for modeling.
-- **Feature Extraction:** Convert text data into numerical features suitable for machine learning.
-- **Model Training:** Train a classification algorithm on the processed data.
-- **Evaluation:** Assess model performance using appropriate metrics.
-- **Prediction:** Use the trained model to classify new messages.
+1. **Data Loading & Exploration:**
+   - The dataset is read from `spam1.csv`, which contains 5,574 SMS messages. The file has two columns:
+     - `sms`: Contains the text of the message.
+     - `label`: Numerical label where **0** indicates a ham message and **1** indicates a spam message.
+   - The notebook provides basic information about the dataset using commands like `df.info()` and displays sample records.
 
-## Dataset
+2. **Data Visualization:**
+   - A **count plot** using Seaborn is generated to visualize the distribution of spam and ham messages, utilizing a custom color palette.
+   - A **pair plot** is created to explore relationships between features.
 
-The project uses the `spam1.csv` dataset:
+3. **Feature Engineering:**
+   - Three new features are derived from the raw text:
+     - **no_of_characters**: Number of characters in a message.
+     - **no_of_words**: Number of words (using NLTK’s word tokenizer).
+     - **no_of_sentences**: Number of sentences (using NLTK’s sentence tokenizer).
+   - These features help provide additional insights that can improve the performance of classification models.
 
-- **Columns:**
-  - `label`: Indicates whether the message is spam or ham.
-  - `message`: Contains the text of the email/SMS message.
+4. **Outlier Analysis:**
+   - Visualizations indicate the presence of outliers in the new features. Although not handled within the notebook, this is noted as an important area for further data preprocessing.
 
-## Features
-
-- **Data Cleaning:** Removal of unwanted characters, lowercasing text, etc.
-- **Text Preprocessing:** Tokenization, stop word removal, and vectorization of text data.
-- **Classification:** Implementation of a machine learning algorithm (e.g., Naive Bayes, Logistic Regression, or another classifier) to distinguish spam from ham.
-- **Evaluation Metrics:** Calculation of accuracy, precision, recall, F1-score, etc.
-- **Visualization:** Generation of plots and charts to illustrate model performance (if implemented).
+5. **Model Building & Comparison:**
+   - The notebook sets up the framework to build and compare three distinct machine learning models (Naive Bayes, SVM, and KNN).
+   - Each model is evaluated using standard metrics to determine the best approach for classifying messages.
 
 ## Requirements
 
-To run this project, you need the following:
-
-- Python 3.x
+- **Python 3.x**
 - Jupyter Notebook or JupyterLab
 
-The required Python libraries include:
+### Python Libraries
 
-- `pandas`
-- `numpy`
-- `scikit-learn`
-- `matplotlib` (if using for visualization)
-- Any other libraries you may be using in your notebook
-
-You can install the required libraries using pip. If you have a `requirements.txt` file, you can run:
+Install the required libraries using pip:
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn matplotlib seaborn nltk
