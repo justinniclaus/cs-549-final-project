@@ -14,13 +14,11 @@ The **Spam or Ham Classification** project aims to classify messages as either s
 
 ## Dataset
 
-The project uses the `spam1.csv` dataset, which is assumed to have the following structure (please update based on your actual dataset):
+The project uses the `spam1.csv` dataset:
 
 - **Columns:**
   - `label`: Indicates whether the message is spam or ham.
   - `message`: Contains the text of the email/SMS message.
-
-*Note:* Be sure to verify the column names and adjust the notebook accordingly if they differ from the assumptions above.
 
 ## Features
 
